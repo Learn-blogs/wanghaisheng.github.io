@@ -12,7 +12,7 @@
     <meta name="description" content="版权声明：欢迎转载本站的所有内容，本站的所有文章使用知识共享署名-非商业性使用-相同方式共享 3.0 Unported许可协议，唯一的要求就是保留署名权，请在转载时注明出处。
 
 Docker 玩转 RHadoop
-网络上已经有了太多的 RHadoop 的安装使用的教程，但其中的配置配置繁复，对版本的">
+网络上已经有了太多的 RHadoop 的安装使用的教程，鉴于其中的配置配置繁复，对软件">
     
     
     
@@ -87,7 +87,7 @@ Docker 玩转 RHadoop
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker_玩转_RHadoop"><span class="toc-number">1.</span> <span class="toc-text">Docker 玩转 RHadoop</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、软硬件环境"><span class="toc-number">1.1.</span> <span class="toc-text">1、软硬件环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、事前准备"><span class="toc-number">1.2.</span> <span class="toc-text">2、事前准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Hadoop_单机环境"><span class="toc-number">1.3.</span> <span class="toc-text">3、Hadoop 单机环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、R的安装"><span class="toc-number">1.4.</span> <span class="toc-text">4、R的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、R的配置"><span class="toc-number">1.5.</span> <span class="toc-text">5、R的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、rhdfs和rmr2的安装"><span class="toc-number">1.6.</span> <span class="toc-text">6、rhdfs和rmr2的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试rmr2-wordcount"><span class="toc-number">1.7.</span> <span class="toc-text">测试rmr2-wordcount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试rmr2-MapReduce的R语言程序"><span class="toc-number">1.8.</span> <span class="toc-text">测试rmr2-MapReduce的R语言程序</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker_玩转_RHadoop"><span class="toc-number">1.</span> <span class="toc-text">Docker 玩转 RHadoop</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、软硬件环境"><span class="toc-number">1.1.</span> <span class="toc-text">1、软硬件环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、事前准备"><span class="toc-number">1.2.</span> <span class="toc-text">2、事前准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Hadoop_单机环境"><span class="toc-number">1.3.</span> <span class="toc-text">3、Hadoop 单机环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、R的安装"><span class="toc-number">1.4.</span> <span class="toc-text">4、R的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、R的配置"><span class="toc-number">1.5.</span> <span class="toc-text">5、R的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、rhdfs和rmr2的安装"><span class="toc-number">1.6.</span> <span class="toc-text">6、rhdfs和rmr2的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、测试rmr2-wordcount"><span class="toc-number">1.7.</span> <span class="toc-text">7、测试rmr2-wordcount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、测试rmr2-MapReduce的R语言程序"><span class="toc-number">1.8.</span> <span class="toc-text">8、测试rmr2-MapReduce的R语言程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文献"><span class="toc-number">1.9.</span> <span class="toc-text">参考文献</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -95,7 +95,7 @@ Docker 玩转 RHadoop
 <p>版权声明：<br>欢迎转载本站的所有内容，本站的所有文章使用<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank" rel="external">知识共享署名-非商业性使用-相同方式共享 3.0 Unported许可协议</a>，唯一的要求就是保留署名权，请在转载时注明出处。</p>
 </blockquote>
 <h2 id="Docker_玩转_RHadoop">Docker 玩转 RHadoop</h2>
-<p>网络上已经有了太多的 RHadoop 的安装使用的教程，但其中的配置配置繁复，对版本的要求又极其严格，故笔者想用时下热门的 docker 来尝尝鲜，以下是心路历程，供看客参考。    </p>
+<p>网络上已经有了太多的 RHadoop 的安装使用的教程，鉴于其中的配置配置繁复，对软件版本的要求又极其苛刻，故笔者想用时下热门的 docker 来尝尝鲜，以下是心路历程，供看客参考，希望能给大家一些帮助。    </p>
 <h3 id="1、软硬件环境">1、软硬件环境</h3>
 <p>操作系统：OXS 10.10.1</p>
 <p>docker安装版本：boot2docker(推荐大家使用<a href="https://github.com/unixorn/docker-helpers.zshplugin该插件可以省去大家不少功夫" target="_blank" rel="external">https://github.com/unixorn/docker-helpers.zshplugin该插件可以省去大家不少功夫</a>)</p>
@@ -157,7 +157,7 @@ Docker 玩转 RHadoop
 <p>3、安装rmr2</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~  R CMD INSTALL <span class="regexp">/Users/</span>wanghaisheng<span class="regexp">/docker/</span>rmr2_3.<span class="number">3.0</span>.tar.gz</div></pre></td></tr></table></figure>
 
-<h3 id="测试rmr2-wordcount">测试rmr2-wordcount</h3>
+<h3 id="7、测试rmr2-wordcount">7、测试rmr2-wordcount</h3>
 <p>1、启动R<br>2、载入rmr2包</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">library</span><span class="params">(rmr2)</span></span></div></pre></td></tr></table></figure>
 
@@ -165,7 +165,7 @@ Docker 玩转 RHadoop
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; small.ints = to.dfs(<span class="number">1</span>:<span class="number">10</span>)</div><div class="line">&gt; mapreduce(input = small.ints, map = <span class="function"><span class="keyword">function</span><span class="params">(k, v)</span> <span class="title">cbind</span><span class="params">(v, v^<span class="number">2</span>)</span>)</span></div><div class="line">&gt; <span class="title">from</span>.<span class="title">dfs</span><span class="params">(<span class="string">"/tmp/file1ea36ae45f9f"</span>)</span></div></pre></td></tr></table></figure>
 
 <p>这里要注意的是 这个临时文件的名字是变化的 请自己根据上一条命令的返回信息进行替换</p>
-<h3 id="测试rmr2-MapReduce的R语言程序">测试rmr2-MapReduce的R语言程序</h3>
+<h3 id="8、测试rmr2-MapReduce的R语言程序">8、测试rmr2-MapReduce的R语言程序</h3>
 <p>1、首先，是基本的hdfs的文件操作。查看hdfs文件目录</p>
 <p>hadoop的命令：hadoop fs -ls /usr<br>R语言函数：hdfs.ls(“/usr/“)</p>
 <p>你会发现什么数据都没有，这时候把事先准备好的测试数据拿进来好了</p>
@@ -175,6 +175,8 @@ Docker 玩转 RHadoop
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function">library</span>(rhdfs)</div><div class="line">Loading required package<span class="value">: rJava</span></div><div class="line">HADOOP_CMD=/root/hadoop/hadoop-<span class="number">1.0</span>.<span class="number">3</span>/bin/hadoop</div><div class="line">Be sure to run hdfs.<span class="function">init</span>()</div><div class="line"></div><div class="line">&gt; hdfs.<span class="function">init</span>()</div><div class="line">hdfs.<span class="function">ls</span>(<span class="string">"/user/"</span>)</div><div class="line"></div><div class="line"><span class="function">library</span>(rmr2)</div><div class="line">&gt; input&lt;- <span class="string">'/user/hdfs/o_same_school/part-m-00000'</span></div><div class="line">&gt; wordcount = <span class="function">function</span>(input, output = NULL, pattern = <span class="string">" "</span>){</div><div class="line"></div><div class="line">  wc.map = <span class="function">function</span>(., lines) {</div><div class="line">            <span class="function">keyval</span>(<span class="function">unlist</span>( <span class="function">strsplit</span>( x = lines,split = pattern)),<span class="number">1</span>)</div><div class="line">    }</div><div class="line"></div><div class="line">    wc.reduce =<span class="function">function</span>(word, counts ) {</div><div class="line">            <span class="function">keyval</span>(word, <span class="function">sum</span>(counts))</div><div class="line">    }         </div><div class="line"></div><div class="line">    <span class="function">mapreduce</span>(input = input ,output = output, input.format = <span class="string">"text"</span>,</div><div class="line">        map = wc.map, reduce = wc.reduce,combine = T)</div><div class="line">}</div><div class="line"></div><div class="line">&gt; <span class="function">wordcount</span>(input)</div><div class="line">&gt; from.<span class="function">dfs</span>(<span class="string">"/tmp/file24053f4a0d65"</span>)</div></pre></td></tr></table></figure>
 
 <p>这里要注意的是 这个临时文件的名字是变化的 请自己根据上一条命令的返回信息进行替换</p>
+<h3 id="参考文献">参考文献</h3>
+<p>1.<a href="http://hijiangtao.github.io/2014/03/23/RHadoopSetupLinux/" target="_blank" rel="external">Linux环境下RHadoop配置笔记</a><br>2.<a href="http://blog.fens.me/series-rhadoop/" target="_blank" rel="external">RHadoop实践系列文章</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
